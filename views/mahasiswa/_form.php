@@ -12,6 +12,7 @@
  		<?= $form->field($model, 'nama')->textInput()?> 
  		<?php $model->isNewRecord==1? $model->jekel='L':$model->jekel; ?>
  		<?= $form ->field($model,'jekel')->radioList(array('L'=>'Laki-laki','P'=>'Perempuan'))->label('Jenis Kelamin')?>
+ 		<?= $form->field($model,'id_jurusan')->dropDownList(ArrayHelper::map(Prodi::find()->all(),'id','jurusan'),['prompt' => 'Pilih'])->label('Jurusan'); ?>
  		<?= $form->field($model,'id_prodi')->dropDownList(ArrayHelper::map(Prodi::find()->all(),'id','prodi'),['prompt' => 'Pilih'])->label('Prodi'); ?>
  		<?= $form->field($model,'email')->textInput() ?>
  		<?= $form->field($model,'alamat')->textarea(array('rows'=>4)) ?>
